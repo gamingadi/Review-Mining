@@ -1,0 +1,74 @@
+.Nav{
+    background: linear-gradient(341deg, rgba(253, 251, 251, 0.919) 0%, rgb(46, 33, 36) 100%);
+    box-shadow: 4px 10px 15px blue;
+    border-bottom: 3px solid blue;
+}
+.nav{
+    height: 50px;
+  
+
+}
+.search{
+    height: 40vh;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    background-color: rgba(172, 172, 127, 0.479);
+    align-items: center;
+}
+.search .input-group{
+    width: 70vw;
+    height: 50px;
+    border-radius: 10%;
+    box-shadow: 4px 4px 8px teal;
+}
+.resturent{
+    padding: 5px 5px 5px 25px;
+    background-image: linear-gradient(red,rgba(0, 0, 255, 0.253));
+    border: solid;
+}
+.card{
+    box-shadow: 1px 1px 5px;
+    padding: 6px;
+    margin: 5px;
+
+}
+.card-text{
+    font-size: small;
+    text-indent: 20px;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+    justify-content: center;
+    background-color: black;
+    /* background: rgb(0,0,0);
+    background: linear-gradient(341deg, rgba(0,0,0,0.9192051820728291) 0%, rgb(226, 213, 216) 100%); */
+    align-items: center;
+    color: white;
+}
+.form{
+    background-color: black;
+    width: 60vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 4px 8px yellowgreen;
+
+}
+h1{
+    text-shadow: 4px 4px 6px teal;
+}
+.img img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background: teal;
+    border-radius: 20%;
+    background-image: url('https://cdn0.iconfinder.com/data/icons/hotel-129/64/location-map-place-point-placeholder-512.png');
+}
