@@ -8,6 +8,7 @@ const restaurent=require('./Route/restaurent');
 const review=require('./Route/review');
 const Mongoose = require('mongoose');
 const {resModel}=require('./Database/models')
+const getReview=require('./Route/getReview')
 //Middlewares
 app.use(express.static("public"))
 app.use(express.json());
@@ -29,9 +30,10 @@ Mongoose.connect("mongodb://127.0.0.1:27017/resturent", {
 //Routes
 app.use(restaurent)
 app.use(review)
+app.use(getReview)
 
 app.get('/',async(req,res)=>{
-    resModel.find({}).populate('review').exec((err,result)=>{
+    resModel.find({}).populate('positiveReview','negativeReview').exec((err,result)=>{
         if(!err){
         res.render("index",{result:result})
         }

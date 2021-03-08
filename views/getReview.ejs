@@ -1,0 +1,27 @@
+<%-include('header');%>
+<body>
+    <%-include('nav')%>
+    <div class="row">
+        <div class="col-3">
+            <%-include('card',{result:res})%>
+        </div>
+        <div class="col r-panel">
+            <h2>Positive Review</h2>
+            <hr>
+            <%res.positiveReview.forEach((review,index)=>{%>
+                <%-include('list',{review:review.review,name:review.Uname,index:index})%>
+            <%})%>
+        <h2>Negetive Review</h2>
+        <% if(res.negetiveReview){%>
+            <%res.negetiveReview.forEach((review)=>{%>
+            <%-include('list',{review:review.review,name:review.Uname})%>
+            <%})%>
+        <%}%>
+        </div>
+    </div>
+    
+    
+   
+   
+</body>
+</html>

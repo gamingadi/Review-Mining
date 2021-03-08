@@ -2,6 +2,7 @@ const express = require("express");
 const Route = express.Router();
 const mongoose = require("mongoose");
 const { revModel, resModel } = require("../Database/models");
+const opinion=require('../middleware/sentiment')
 
 Route.get("/review", (req, res) => {
   resModel.find({}, "name", (err, result) => {
@@ -28,11 +29,14 @@ Route.post("/review", (req, res) => {
     rating: rating,
   });
   newReview.save(async(err,result)=>{
-    resModel.updateOne({name:restaurant},{$push:{review:newReview.id}},(err,result)=>{
+    let push=opinion(review)?({$push:{positiveReview:newReview.id}}):({$push:{ negativeReview:newReview.id}});
+    resModel.updateOne({name:restaurant},push,(err,result)=>{
         if(result.ok){
             console.log(newReview.id);
+            console.log(result);
             res.redirect('/review')
         }else{
+          console.log(err);
             res.send("<a herf='/'>Something Wrong GO BACK</a>")
         }
     })

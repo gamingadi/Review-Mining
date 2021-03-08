@@ -2,10 +2,11 @@
     <img src=<%=result.img%> class="card-img-top" alt="res.name">
     <div class="card-body">
         <h5 class="card-title"><%=result.name%></h5>
-        <p class="card-text">Address:- <%=result.address%></p>
-        <p class="card-text">Contact:- <%=result.contact%></p>
-        <p class="card-text">Opening:- <%=result.opening%> </p>
-        <p class="card-text">Closing:- <%=result.closing%></p>
-        <p class="card-text">Rating:- <%=result.rating%></p>
+        <p class="card-text"><strong>Address:- </strong>  <%=result.address%></p>
+        <p class="card-text"><strong>Contact:- </strong> <%=result.contact%></p>
+        <p class="card-text"><strong>Opening:- </strong> <%=result.opening%> </p>
+        <p class="card-text"><strong>Closing:- </strong> <%=result.closing%></p>
+        <p class="card-text"><strong>Rating:-  </strong> <%=result.rating%></p>
+        <p class="card-title"><a href="/getReview?id=<%=result._id%>"> See Review</a></p>
     </div>
 </div>
